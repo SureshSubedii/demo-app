@@ -18,16 +18,18 @@ public class HomeController {
 	
 	@RequestMapping("/display")
     @Operation(summary = "Say Hello", description = "Returns a simple greeting message")
-	public ModelAndView showHome(@RequestParam(name = "n1", required = true, defaultValue = "0") int num1,
-            @RequestParam(name = "n2", required = true, defaultValue = "0") int num2) {
+	public String showHome(@RequestParam(name = "n1", required = true, defaultValue = "0") int num1,
+            @RequestParam(name = "n2", required = true, defaultValue = "0") int num2, Model model ) {
 		int sum = num1 + num2;
 		 System.out.println("**************************************************" + sum);
-		 ModelAndView mv = new ModelAndView();
+
 		 
-	        mv.setViewName("home.jsp"); 
-		 mv.addObject("sum", sum);
+		    model.addAttribute("sum", sum);
+		    model.addAttribute("message", "THis is the message");
+
+
 		
-		return mv;
+		return "home.jsp";
 	}
 
 }

@@ -6,6 +6,8 @@
 </head>
 <body>
     <h1>This is the homepage</h1>
-    <p>Sum: ${sum}</p> <!-- Display the sum using JSP EL -->
+    <p>Sum: ${sum}</p>
+    <p>Sum: ${message}</p>
+    
 </body>
 </html>
