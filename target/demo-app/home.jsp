@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <!DOCTYPE html>
-    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html>
+<head>
+    <title>Home Page</title>
+</head>
 <body>
-    <h2>Sum: "${sum}"</h2>
     <h1>This is the homepage</h1>
+    <p>Sum: ${sum}</p> <!-- Display the sum using JSP EL -->
 </body>
 </html>
