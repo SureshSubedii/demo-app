@@ -35,9 +35,7 @@ public class ApiController {
     @PostMapping(value = "/source", produces = "application/json")
     public ResponseEntity<Map<String, Object>> getData(@RequestBody RequestDTO requestData) {
         Source source = new Source(requestData.getName(), requestData.getDescription());
-        SourceDestMapper mapper = Mappers.getMapper(SourceDestMapper.class);
-
-        Destination dest = mapper.sourceToDestination(source);
+        Destination dest = SourceDestMapper.MAPPER.sourceToDestination(source);
         System.out.println("_______________________________________________________________________________________________________________" + dest.getName() + dest.getDescription());
         Map<String, Object> destination = new HashMap<>();
         destination.put("name", dest.getName());
